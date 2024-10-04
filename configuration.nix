@@ -34,6 +34,13 @@
   #   useXkbConfig = true; # use xkb.options in tty.
   # };
 
+  fonts.packages = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+    fira-code
+  ];
+
   environment.pathsToLink = [ "/libexec" ];
 
   # Enable the X11 windowing system.
