@@ -39,6 +39,7 @@
     noto-fonts-cjk
     noto-fonts-emoji
     fira-code
+    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "SpaceMono" ]; })
   ];
 
   environment.pathsToLink = [ "/libexec" ];
