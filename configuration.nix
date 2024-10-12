@@ -103,6 +103,7 @@
       alacritty
       cbonsai
       tty-clock
+      ripgrep
     ];
     shell = pkgs.zsh;
   };
