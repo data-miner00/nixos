@@ -30,7 +30,7 @@ local plugins = {
 require("lazy").setup(plugins, opts)
 
 require("catppuccin").setup()
-vim.cmd.colorscheme = "catppuccin"
+vim.cmd.colorscheme "catppuccin"
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<C-p>', builtin.find_files, {})
@@ -44,4 +44,4 @@ local function print_plugins()
     end
   end
 end
-print_plugins()  -- Comment or uncomment to toggle the output
+-- print_plugins()  -- Comment or uncomment to toggle the output
