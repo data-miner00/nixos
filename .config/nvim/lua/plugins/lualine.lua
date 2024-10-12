@@ -6,6 +6,7 @@ return {
       options = {
         icons_enabled = true,
         theme = 'catppuccin',
+        section_separators = { left = '', right = '' },
       },
       sectuibs = {
         lualine_a = {
