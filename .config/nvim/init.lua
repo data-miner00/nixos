@@ -24,7 +24,8 @@ local plugins = {
   {
     'nvim-telescope/telescope.nvim', tag = '0.1.8',
     dependencies = { 'nvim-lua/plenary.nvim' }
-  }
+  },
+  {"nvim-treesitter/nvim-treesitter", build= ":TSUpdate"}
 }
 
 require("lazy").setup(plugins, opts)
@@ -35,6 +36,13 @@ vim.cmd.colorscheme "catppuccin"
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<C-p>', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+
+local config = require("nvim-treesitter.configs")
+config.setup({
+  ensure_installed = {"lua", "javascript"},
+  highlight = { enable = true },
+  indent = { enable = true }
+})
 
 local function print_plugins()
   local plugins = require("lazy").plugins()
