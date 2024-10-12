@@ -20,9 +20,28 @@ vim.opt.rtp:prepend(lazypath)
 
 local opts = {}
 local plugins = {
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  {
+    'nvim-telescope/telescope.nvim', tag = '0.1.8',
+    dependencies = { 'nvim-lua/plenary.nvim' }
+  }
 }
 
 require("lazy").setup(plugins, opts)
+
 require("catppuccin").setup()
 vim.cmd.colorscheme = "catppuccin"
+
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<C-p>', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+
+local function print_plugins()
+  local plugins = require("lazy").plugins()
+  for _, plugin in pairs(plugins) do
+    if plugin.url ~= nil then
+      print(plugin.url .. "\n")
+    end
+  end
+end
+print_plugins()  -- Comment or uncomment to toggle the output
