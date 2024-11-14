@@ -105,6 +105,11 @@
       cbonsai
       tty-clock
       ripgrep
+      fzf
+      unzip
+      vlc
+      jq
+      starship
     ];
     shell = pkgs.zsh;
   };
