@@ -187,4 +187,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        padding 2px 6px 4px 1px
+        i3bar_command i3bar --transparency
+        separator_symbol ":|:"
 }
