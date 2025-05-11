@@ -44,6 +44,8 @@
 
   environment.pathsToLink = [ "/libexec" ];
 
+  environment.variables.CURL_HOME = "/home/mumk/.config/curl";
+
   # Enable the X11 windowing system.
   services = {
 
@@ -97,10 +99,8 @@
       tree
       ponysay
       tmux
-      thunderbird
       neovim
       copyq
-      waybar
       alacritty
       cbonsai
       tty-clock
@@ -110,6 +110,7 @@
       vlc
       jq
       starship
+      feh
     ];
     shell = pkgs.zsh;
   };
@@ -121,7 +122,6 @@
     wget
     neofetch
     git
-    kitty
     zsh
     foot
     gcc
